@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name></name>
+	<author>Alleykat</author>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<packageId>Alleykat.PersistentPrecepts</packageId>
+	<description>Persistent Precepts allows you to prevent the re-randomization of Ideology precepts, rituals, buildings etc. when you change the structure or memes. With this mod, you can ensure that your carefully crafted Ideology remains intact, even if you go back and change structure/memes.</description>
+	<loadAfter>
+  		<li>0Harmony</li>
+	</loadAfter>
+</ModMetaData>
