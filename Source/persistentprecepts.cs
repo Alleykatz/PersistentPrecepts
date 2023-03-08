@@ -28,6 +28,17 @@ namespace PersistentPrecepts
             Log.Message("Persistent Precepts Mod class loaded");
 
         }
+        public override void DoSettingsWindowContents(Rect inRect) //Add the toggle to mod settings menu too
+        {
+            Listing_Standard listing = new Listing_Standard();
+            listing.Begin(inRect);
+
+            listing.CheckboxLabeled("Persistent Precepts", ref PersistentPreceptsSettings.PersistentPreceptsCheckboxValue);
+
+            listing.End();
+
+            base.DoSettingsWindowContents(inRect);
+        }
         public override string SettingsCategory() => "Persistent Precepts";
     }
     public class PersistentPreceptsSettings : ModSettings //setup the mod settings
@@ -36,30 +47,22 @@ namespace PersistentPrecepts
     }
 
     [HarmonyPatch(typeof(IdeoUIUtility), "DoIdeoListAndDetails")]
-    public static class Patch_DoIdeoListAndDetails
+    public static class Patch_DoIdeoListAndDetails //edits the ideoligion edit screen
     {
-        private static bool lastCheckboxValue = false; // stores the previous value of the checkbox
-
         public static void Postfix(ref Vector2 scrollPosition_list, ref float scrollViewHeight_list, ref Vector2 scrollPosition_details, ref float scrollViewHeight_details)
         {
 
             Listing_Standard listing = new Listing_Standard();
-            listing.Begin(new Rect(500f, 0f, 150f, 24f));   // create the checkbox 500 pixels to the right
+            listing.Begin(new Rect(500f, 0f, 150f, 24f));   // create the checkbox 500 pixels to the right on ideoligion edit screen
 
             bool newCheckboxValue = PersistentPreceptsSettings.PersistentPreceptsCheckboxValue;
-            if (newCheckboxValue != lastCheckboxValue)  // log the value only when it changes
-            {
-                lastCheckboxValue = newCheckboxValue;
-                Log.Message($"Persistent Precepts is now {lastCheckboxValue}");
-            }
-
             listing.CheckboxLabeled("Persistent Precepts", ref PersistentPreceptsSettings.PersistentPreceptsCheckboxValue);
 
             listing.End();
         }
     }
 
-    [HarmonyPatch(typeof(IdeoFoundation), "RandomizePrecepts")] //This is the actual harmony patch to the RandomizePrecepts method in Ideology. Only blocks the method when 
+    [HarmonyPatch(typeof(IdeoFoundation), "RandomizePrecepts")] //This is the actual harmony patch to the RandomizePrecepts method in Ideology. Only blocks the method when toggle is on.
     public static class Patch_RandomizePrecepts
     {
         public static bool Prefix(IdeoFoundation __instance)
@@ -72,6 +75,4 @@ namespace PersistentPrecepts
             return true;
         }
     }
-
-
 }
