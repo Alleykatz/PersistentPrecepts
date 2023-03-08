@@ -8,4 +8,5 @@ Persistent Precepts is a mod for Rimworld which allows you to prevent the re-ran
 
 ### To do:
 -Update the Mod Settings menu
+
 -Update Dialogue window warning about Precept Randomization when changing memes.
