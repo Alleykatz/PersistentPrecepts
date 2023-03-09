@@ -73,7 +73,6 @@ namespace PersistentPrecepts
             // Yield the methods to patch
             yield return AccessTools.Method(typeof(RimWorld.Dialog_ChooseMemes), "DoAcceptChanges");
             yield return AccessTools.Method(typeof(RimWorld.Dialog_ReformIdeo), "RandomizeNewIdeo");
-            //yield return AccessTools.Method(typeof(RimWorld.IdeoFoundation_Deity), "Init");
             yield return AccessTools.Method(typeof(RimWorld.IdeoUIUtility), "DoPreceptsInt");
         }
 
