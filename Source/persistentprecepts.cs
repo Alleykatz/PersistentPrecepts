@@ -1,5 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using Verse;
 
@@ -8,6 +10,7 @@ namespace PersistentPrecepts
     [StaticConstructorOnStartup]
     public static class PersistentPrecepts
     {
+        public static bool ignoreRandomize = false;//Global Bool to ignore randomization
         static PersistentPrecepts() //our constructor
         {
             Log.Message("PersistentPrecepts Loaded"); //Outputs to the dev console.
@@ -62,12 +65,37 @@ namespace PersistentPrecepts
         }
     }
 
-    [HarmonyPatch(typeof(IdeoFoundation), "RandomizePrecepts")] //This is the actual harmony patch to the RandomizePrecepts method in Ideology. Only blocks the method when toggle is on.
+    [HarmonyPatch]
+    public static class Patch_IgnoreRandomize
+    {
+        public static IEnumerable<MethodBase> TargetMethods()
+        {
+            // Yield the methods to patch
+            yield return AccessTools.Method(typeof(RimWorld.Dialog_ChooseMemes), "DoAcceptChanges");
+            yield return AccessTools.Method(typeof(RimWorld.Dialog_ReformIdeo), "RandomizeNewIdeo");
+            //yield return AccessTools.Method(typeof(RimWorld.IdeoFoundation_Deity), "Init");
+            yield return AccessTools.Method(typeof(RimWorld.IdeoUIUtility), "DoPreceptsInt");
+        }
+
+        public static void Prefix()
+        {
+            PersistentPrecepts.ignoreRandomize = PersistentPreceptsSettings.PersistentPreceptsCheckboxValue;
+            // Set ignoreRandomize to the current value of the PersistentPrecepts checkbox
+        }
+
+        public static void Postfix()
+        {
+            PersistentPrecepts.ignoreRandomize = false;
+            // Reset ignoreRandomize after the patched method finishes executing,  which will allow the RandomizePrecepts() method to be called normally again.
+        }
+    }
+
+    [HarmonyPatch(typeof(RimWorld.IdeoFoundation), "RandomizePrecepts")] //This is the actual harmony patch that blocks the RandomizePrecepts method in Ideology.
     public static class Patch_RandomizePrecepts
     {
         public static bool Prefix(IdeoFoundation __instance)
         {
-            if (PersistentPreceptsSettings.PersistentPreceptsCheckboxValue)
+            if (PersistentPrecepts.ignoreRandomize)
             {
                 Log.Message("RandomizePrecepts blocked!");
                 return false;
