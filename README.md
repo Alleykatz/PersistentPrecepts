@@ -5,9 +5,7 @@ Persistent Precepts is a mod for Rimworld which allows you to prevent the re-ran
 
 ### Done:
 -Toggle that blocks precept randomization (added to both ideoligion edit screen and mod settings option)
+-Toggle only blocks precept randomization on player initiated action. This prevents the toggle from blocking precept generation when the game generates faction ideologies.
 
 ### To do:
 -Update Dialogue window warning about Precept Randomization when changing memes.
-
-### Maybe?
--Add a toggle in mod options that shows/hides the Persistent Precepts toggle in Ideoligion screen.
