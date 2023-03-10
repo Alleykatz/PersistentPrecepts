@@ -28,8 +28,9 @@ The mod uses harmony to patch a few methods related to player actions on the ide
 - Rimworld modding community, this is my first ever mod and I couldn't have done it without supportive people in discord.
 
 ### Credits
-Thumbnail dice icon: by Delapouite (games-icons.net)
-Thumbnail font: [Marnador's fan made font](https://ludeon.com/forums/index.php?topic=11022.0)
+Thumbnail dice icon - by Delapouite (games-icons.net)
+
+Thumbnail font - [Marnador's fan made font](https://ludeon.com/forums/index.php?topic=11022.0)
   
  ### Done:
 -Toggle that blocks precept randomization (added to both ideoligion edit screen and mod settings option)
