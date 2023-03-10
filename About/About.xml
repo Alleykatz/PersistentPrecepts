@@ -25,11 +25,8 @@
 	</loadAfter>
 	<description>
 	Persistent Precepts adds a simple toggle to the Ideology edit screen that prevents the re-randomization of Ideology precepts, rituals, buildings etc. when you change structure or memes.
-	With this mod, you can ensure that your carefully crafted Ideology remains intact, even if you go back and change structure/memes. 
 	
-	I made this mod because I was so tired of remaking everything every time I changed ONE meme. This also means your saved ideoligions can better act as templates when you load them in.
-
-	The mod uses harmony to patch a few methods related to player actions on the ideology edit screen and precept randomization. It touches nothing else besides adding the checkbox so should be highly compatible.
+	With this mod, you can ensure that your carefully crafted Ideology remains intact, even if you go back and change structure/memes. This also means your saved ideoligions can better act as templates when you load them in.
 
 	When the toggle is on, ideology re-randomization for the player is blocked for:
 	[list]
@@ -45,11 +42,14 @@
 	[*]	Appearance (Hair, Beards, Tattoos)
 	[/list]
 
-	Please note: The confirmation warning of re-randomizing precepts still comes up, please ignore it for now while I work out how to change the confirmation dialogue. If you start a new game and forget to turn the toggle off, your faction's ideology will be generated without any precepts/rituals etc. This is easily fixed by flicking the toggle back off and selecting "Randomize Precepts" button. Other factions generated at world creation and as part of events are not impacted.
+	Please note: The confirmation warning of re-randomizing precepts still comes up, please ignore it for now while I work out how to change the confirmation dialogue.
+	If you start a new game and forget to turn the toggle off, your faction's ideology will be generated without any precepts/rituals etc. This is easily fixed by flicking the toggle back off and selecting "Randomize Precepts" button. Other factions generated at world creation and as part of events are not impacted.
 
+	Compatibility
+	The mod uses harmony to patch a few methods related to player actions on the ideology edit screen and precept randomization. It touches nothing else besides adding the checkbox so should be highly compatible with other mods.
 
 	Thanks
-	Mute for reviewing my code and generally amazing with guidance, especially with how to approach limiting the toggle to only affect player actions.
+	Mute for reviewing my code and being generally awesome with guidance, especially with how to approach limiting the toggle to only affect player actions.
 	Mile for giving me advice and a friendly space to get help and feedback.
 	Rimworld modding community, this is my first ever mod and I couldn't have done it without supportive people in discord.
 
