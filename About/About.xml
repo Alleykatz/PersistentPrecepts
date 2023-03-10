@@ -42,18 +42,18 @@
 	[*]	Appearance (Hair, Beards, Tattoos)
 	[/list]
 
-	Please note: The confirmation warning of re-randomizing precepts still comes up, please ignore it for now while I work out how to change the confirmation dialogue.
+	[b]Please note:[/b] The confirmation warning of re-randomizing precepts still comes up, please ignore it for now while I work out how to change the confirmation dialogue.
 	If you start a new game and forget to turn the toggle off, your faction's ideology will be generated without any precepts/rituals etc. This is easily fixed by flicking the toggle back off and selecting "Randomize Precepts" button. Other factions generated at world creation and as part of events are not impacted.
 
-	Compatibility
+	[h1]Compatibility[/h1]
 	The mod uses harmony to patch a few methods related to player actions on the ideology edit screen and precept randomization. It touches nothing else besides adding the checkbox so should be highly compatible with other mods.
 
-	Thanks
+	[h1]Thanks[/h1]
 	Mute for reviewing my code and being generally awesome with guidance, especially with how to approach limiting the toggle to only affect player actions.
 	Mile for giving me advice and a friendly space to get help and feedback.
-	Rimworld modding community, this is my first ever mod and I couldn't have done it without supportive people in discord.
+	Rimworld modding community, this is my first ever mod and I couldn't have done it without the supportive people in discord.
 
-	Credits
+	[h1]Credits[/h1]
 	Thumbnail dice icon: by Delapouite (games-icons.net)
 	Thumbnail font: [url=https://ludeon.com/forums/index.php?topic=11022.0] Marnador's fan made font[/url]
 
