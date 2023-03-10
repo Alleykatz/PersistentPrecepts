@@ -25,7 +25,7 @@ The mod uses harmony to patch a few methods related to player actions on the ide
 ### Thanks
 - Mute for reviewing my code and being generally awesome with guidance, especially with how to approach limiting the toggle to only affect player actions.
 - Mile for giving me advice and a friendly space to get help and feedback.
-- Rimworld modding community, this is my first ever mod and I couldn't have done it without supportive people in discord.
+- Rimworld modding community, this is my first ever mod and I couldn't have done it without the supportive people in discord.
 
 ### Credits
 Thumbnail dice icon - by Delapouite (games-icons.net)
