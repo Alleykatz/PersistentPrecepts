@@ -31,6 +31,8 @@ The mod uses harmony to patch a few methods related to player actions on the ide
 Thumbnail dice icon - by Delapouite (games-icons.net)
 
 Thumbnail font - [Marnador's fan made font](https://ludeon.com/forums/index.php?topic=11022.0)
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=2944765939
   
  ### Done:
 -Toggle that blocks precept randomization (added to both ideoligion edit screen and mod settings option)
